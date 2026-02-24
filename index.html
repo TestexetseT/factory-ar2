@@ -36,25 +36,12 @@
         <a-marker preset="hiro">
             <!-- Y軸に立たせるため X軸まわりに -90° 回転 -->
             <a-entity rotation="-90 0 0">
-                <!-- マーカー上面から15cm上にメッセージ -->
-                <a-text
-                    value="Here is the first step!"
-                    font="https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/notosansjp/NotoSansJP-Medium.json"
-                    shader="msdf"
-                    font-image="https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/notosansjp/NotoSansJP-Medium.png"
-                    align="center"
-                    position="0 0.5 0"
-                    scale="1 1 1"
-                    color="#FF0000"
-                    width="4">
-                </a-text>
-
                 <a-entity position="1 -0.7 -2" class="clickable">
                 <!-- 下向き矢印：軸 -->
                 <a-cylinder color="red" radius="0.08" height="0.5" position="0 -0.25 0" opacity="0.9"></a-cylinder>
                 <!-- 下向き矢印：先端 -->
                 <a-cone color="red" radius-bottom="0.22" radius-top="0" height="0.35" position="0 -0.6 0" rotation="180 0 0" opacity="0.9"></a-cone>
-                <a-text value="1つ目 A" align="center" position="0 1 0" scale="2 2 2" color="white"></a-text>
+                <a-text value="Here is the first step" align="center" position="0 1 0" scale="2 2 2" color="white"></a-text>
                 
                 <a-triangle color="red" rotation="-90 0 0" scale="0.5 0.5 0.5" position="0 -0.7 0.5"
                             animation="property: position; to: 0 -0.7 1; dir: alternate; dur: 1000; loop: true">
@@ -85,3 +72,4 @@
     </a-scene>
 </body>
 </html>
+
