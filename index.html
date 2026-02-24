@@ -34,19 +34,22 @@
         <a-entity cursor="rayOrigin: mouse"></a-entity>
 
         <a-marker preset="hiro">
-            <!-- マーカー上面から15cm上にメッセージ -->
-            <a-text 
-            value="この工程からはじめる！" 
-            font="https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/notosansjp/NotoSansJP-Medium.json"
-            shader="msdf"
-            font-image="https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/notosansjp/NotoSansJP-Medium.png"
-            align="center" 
-            position="0 0.5 0" 
-            scale="1 1 1" 
-            color="#FF0000" 
-            width="4">
-            </a-text>
-            <a-entity position="1 -0.7 -2" class="clickable">
+            <!-- Y軸に立たせるため X軸まわりに -90° 回転 -->
+            <a-entity rotation="-90 0 0">
+                <!-- マーカー上面から15cm上にメッセージ -->
+                <a-text
+                    value="この工程からはじめる！"
+                    font="https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/notosansjp/NotoSansJP-Medium.json"
+                    shader="msdf"
+                    font-image="https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/notosansjp/NotoSansJP-Medium.png"
+                    align="center"
+                    position="0 0.5 0"
+                    scale="1 1 1"
+                    color="#FF0000"
+                    width="4">
+                </a-text>
+
+                <a-entity position="1 -0.7 -2" class="clickable">
                 <!-- 下向き矢印：軸 -->
                 <a-cylinder color="red" radius="0.08" height="0.5" position="0 -0.25 0" opacity="0.9"></a-cylinder>
                 <!-- 下向き矢印：先端 -->
@@ -74,11 +77,11 @@
                 <a-text value="3つ目 C" align="center" position="0 1 0" scale="2 2 2" color="black"></a-text>
             </a-entity>
 
+            </a-entity>
         </a-marker>
 
         <a-entity camera></a-entity>
 
     </a-scene>
 </body>
-
 </html>
