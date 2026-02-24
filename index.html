@@ -53,9 +53,15 @@
             </a-entity>
         </a-marker>
 
+        <!-- Meta用マーカー：このマーカーが検出されたら "Second Step" を表示 -->
+        <a-marker preset="kanji">
+            <a-entity rotation="-90 0 0">
+                <a-text value="Second Step" align="center" position="0 0.5 0" scale="4 4 4" color="#000000" width="3"></a-text>
+            </a-entity>
+        </a-marker>
+
         <a-entity camera></a-entity>
 
     </a-scene>
 </body>
 </html>
-
