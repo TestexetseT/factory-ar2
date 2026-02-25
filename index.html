@@ -1,19 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>工場DX AR誘導プロトタイプ - Quest 3 対応版</title>
+    <title>工場DX AR誘導プロトタイプ - 修正版</title>
     
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
     <style>
-        /* ブラウザの背景を透明に強制するスタイル */
-        .a-canvas {
-            background-color: transparent !important;
-        }
+        .a-canvas { background-color: transparent !important; }
     </style>
 </head>
 
@@ -21,60 +17,39 @@
 
     <a-scene 
         embedded 
-        arjs="sourceType: webcam; debugUIEnabled: false;"
+        arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
         renderer="alpha: true; antialias: true; colorManagement: true;"
-        webxr="requiredFeatures: local-floor; optionalFeatures: hit-test, spatial-tracking"
         xr-mode-ui="enabled: true">
 
-        <a-sky visible="false"></a-sky>
-
-        <a-entity oculus-touch-controls="hand: left" raycaster="objects: .clickable; far: 100; lineOpacity: 0.5;"></a-entity>
-        
-        <a-entity oculus-touch-controls="hand: right" raycaster="objects: .clickable; far: 100; lineOpacity: 0.5;"></a-entity>
-
-        <a-entity cursor="rayOrigin: mouse"></a-entity>
-
         <a-marker preset="hiro">
-            <!-- Y軸に立たせるため X軸まわりに -90° 回転 -->
             <a-entity rotation="-90 0 0">
-                <a-entity position="1 -0.7 -2" class="clickable">
-                    <!-- 下向き矢印：軸 -->
+                <a-entity position="0 0 0" class="clickable">
                     <a-cylinder color="red" radius="0.08" height="0.5" position="0 0.5 0.25" opacity="0.9"></a-cylinder>
-                    <!-- 下向き矢印：先端 -->
                     <a-cone color="red" radius-bottom="0.22" radius-top="0" height="0.35" position="0 0.6 0.25" rotation="180 0 0" opacity="0.9"></a-cone>
-                    <a-text value="First Step" align="center" position="0 1 0" scale="4 4 4" color="#000000"></a-text>
-
-                    <a-triangle color="red" rotation="-90 0 0" scale="0.5 0.5 0.5" position="0 -0.7 0.5"
-                        animation="property: position; to: 0 -0.7 1; dir: alternate; dur: 1000; loop: true">
+                    <a-text value="First Step" align="center" position="0 1.2 0" scale="2 2 2" color="#000000"></a-text>
+                    
+                    <a-triangle color="red" rotation="-90 0 0" scale="0.5 0.5 0.5" position="0 -0.2 0.5"
+                        animation="property: position; to: 0 -0.2 0.8; dir: alternate; dur: 1000; loop: true">
                     </a-triangle>
                 </a-entity>
-
-            </a-entity>
             </a-entity>
         </a-marker>
 
         <a-marker preset="kanji">
-            <!-- Y軸に立たせるため X軸まわりに -90° 回転 -->
             <a-entity rotation="-90 0 0">
-                <a-entity position="1 -0.7 -2" class="clickable">
-                    <!-- 下向き矢印：軸 -->
-                    <a-cylinder color="red" radius="0.08" height="0.5" position="0 0.5 0.25" opacity="0.9"></a-cylinder>
-                    <!-- 下向き矢印：先端 -->
-                    <a-cone color="red" radius-bottom="0.22" radius-top="0" height="0.35" position="0 0.6 0.25" rotation="180 0 0" opacity="0.9"></a-cone>
-                    <a-text value="Second Step" align="center" position="0 1 0" scale="4 4 4" color="#000000"></a-text>
+                <a-entity position="0 0 0" class="clickable">
+                    <a-cylinder color="blue" radius="0.08" height="0.5" position="0 0.5 0.25" opacity="0.9"></a-cylinder>
+                    <a-cone color="blue" radius-bottom="0.22" radius-top="0" height="0.35" position="0 0.6 0.25" rotation="180 0 0" opacity="0.9"></a-cone>
+                    <a-text value="Second Step" align="center" position="0 1.2 0" scale="2 2 2" color="#000000"></a-text>
 
-                    <a-triangle color="red" rotation="-90 0 0" scale="0.5 0.5 0.5" position="0 -0.7 0.5"
-                        animation="property: position; to: 0 -0.7 1; dir: alternate; dur: 1000; loop: true">
+                    <a-triangle color="blue" rotation="-90 0 0" scale="0.5 0.5 0.5" position="0 -0.2 0.5"
+                        animation="property: position; to: 0 -0.2 0.8; dir: alternate; dur: 1000; loop: true">
                     </a-triangle>
                 </a-entity>
-
-            </a-entity>
             </a-entity>
         </a-marker>
 
         <a-entity camera></a-entity>
-
     </a-scene>
 </body>
 </html>
-
